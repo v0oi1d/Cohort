@@ -6,9 +6,10 @@
 
 function sleep(milliseconds) {
     let p  = new Promise((resolve)=>{
-         setTimeout(()=>{
-            resolve()
-         },milliseconds)
+    
+        let date = Date.now();
+        while(Date.now()-date<milliseconds)
+        resolve()
 
     })
     return p;
